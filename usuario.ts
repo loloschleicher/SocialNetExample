@@ -3,7 +3,7 @@ import { Album } from "./album";
 export class Usuario{
     private nombre: string;
     private apellido: string;  
-    private imagen: string;
+    //imagen: string;
     albums: Array<Album>;
 
     constructor(nombre: string){
@@ -39,6 +39,14 @@ export class Usuario{
             }
         });
         return albumBuscado;     
+    }
+
+    agregarImagen(imagen: string, nombreAlbum: string){
+        this.albums.forEach((key, index) => {
+            if(key.getNombre() == nombreAlbum){
+                key.imagenes.push(imagen);
+            }
+        })
     }
 
     

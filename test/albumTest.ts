@@ -76,6 +76,14 @@ describe('Test de Album', function(){
         })
         expect(nombre).to.equals("album3");
     });
+    it('Usuario agrega una imagen en un album', function(){
+        var usuario = new Usuario("leonel");    
+        var album = new Album("albumPerfil");
+        usuario.agregarAlbum(album);
+        usuario.agregarImagen("fotoPerfil.jpg", "albumPerfil" );
+        usuario.agregarImagen("fotoPerfil.jpg1", "albumPerfil" );
+        expect(album.imagenes.length).to.equals(2);
+    });
 
 
     
