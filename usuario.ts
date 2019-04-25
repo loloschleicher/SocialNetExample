@@ -50,6 +50,19 @@ export class Usuario{
         })
     }
 
+    eliminarImagen(nombreimagen: string, nombreAlbum: string){
+        this.albums.forEach((key, index) => {
+            if(key.getNombre() == nombreAlbum){
+                key.imagenes.forEach((key1, index) => {
+                    if(key1.getNombre() == nombreimagen){
+                        key.imagenes.splice(index, 1);
+                    }
+                })
+            }
+        })
+    }
+
+
 
     
     }
