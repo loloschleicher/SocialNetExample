@@ -16,7 +16,7 @@ export class Usuario{
     }
 
     quitarAlbum(nombre: string){
-        this.albums.forEach(function(key, index){
+        this.albums.forEach((key, index) => {
             if(key.getNombre() == nombre ){
                 this.albums.splice(index, 1);
             }

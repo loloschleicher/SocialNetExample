@@ -11,15 +11,14 @@ describe('Test de Album', function(){
         expect(usuario.albums.length).to.equals(1); 
     });
 
-   /* it('Usuario quita un album', function(){
+    it('Usuario quita un album', function(){
         var usuario = new Usuario("leonel");
         
         var album = new Album("album1")
         usuario.agregarAlbum(album);
         usuario.quitarAlbum("album1");
-
-        expect().to.equal();
-    });*/
+        expect(usuario.albums.length).to.equals(0);
+    });
 
     
 
