@@ -40,6 +40,18 @@ describe('Test de Album', function(){
         usuario.agregarAlbum(album2);
         expect(usuario.albums.length).to.equals(2);
     });
+    it('Usuario no puede quitar un album con nombre no exisente', function(){
+        var usuario = new Usuario("leonel");
+        
+        var album = new Album("album");
+        var album1 = new Album("album1");
+        var album2 = new Album("album2");
+        usuario.agregarAlbum(album);
+        usuario.agregarAlbum(album1);
+        usuario.agregarAlbum(album2);
+        usuario.quitarAlbum("album3");
+        expect(usuario.albums.length).to.equals(3);
+    });
 
     
 
