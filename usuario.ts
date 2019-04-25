@@ -43,11 +43,7 @@ export class Usuario{
     }
 
     agregarImagen(imagen: Imagen, nombreAlbum: string){
-        this.albums.forEach((key, index) => {
-            if(key.getNombre() == nombreAlbum){
-                key.imagenes.push(imagen);
-            }
-        })
+        this.obtenerAlbum(nombreAlbum).agregarImagen(imagen);
     }
 
     eliminarImagen(nombreimagen: string, nombreAlbum: string){
@@ -61,6 +57,10 @@ export class Usuario{
             }
         })
     }
+
+    /*asignarCaratula(nombreimagen: string, nombreAlbum: string){
+        this.albums.ca
+    }*/
 
 
 
