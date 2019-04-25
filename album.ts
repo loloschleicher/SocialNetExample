@@ -30,6 +30,14 @@ export class Album{
         })
     }
 
+    asignarCaratula(nombreimagen: string){
+        this.imagenes.forEach((key, index) => {
+            if(key.getNombre() == nombreimagen){
+                this.caratula = key;
+            }
+        })
+    }
+
 
 
 

@@ -50,9 +50,9 @@ export class Usuario{
         this.obtenerAlbum(nombreAlbum).eliminarImagen(nombreimagen);
     }
 
-    /*asignarCaratula(nombreimagen: string, nombreAlbum: string){
-        this.albums.ca
-    }*/
+    asignarCaratula(nombreImagen: string, nombreAlbum: string){
+        this.obtenerAlbum(nombreAlbum).asignarCaratula(nombreImagen);
+    }
 
 
 
