@@ -4,14 +4,23 @@ export class Usuario{
     private nombre: string;
     private apellido: string;  
     private imagen: string;
-    private albums: Album;
+    public albums: Array<Album>;
 
     constructor(nombre: string){
         this.nombre = nombre;
+        this.albums = [];
     }
 
     agregarAlbum(album: Album){
-        this.albums = album;
+        this.albums.push(album);
+    }
+
+    quitarAlbum(nombre: string){
+        this.albums.forEach(function(key, index){
+            if(key.getNombre() == nombre ){
+                this.albums.splice(index, 1);
+            }
+        });      
     }
 
     

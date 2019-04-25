@@ -2,13 +2,27 @@ import { expect } from 'chai';
 import { Usuario } from '../usuario';
 import { Album } from '../album';
 
-describe('Agregar 1 Album', function(){
-    it('Deberia ser igual a album1', function(){
+describe('Test de Album', function(){
+    it('Usuario agrega 1 album', function(){
+        var usuario = new Usuario("leonel");
+        
+        var album = new Album("album1")
+        usuario.agregarAlbum(album);  
+        expect(usuario.albums.length).to.equals(1); 
+    });
+
+   /* it('Usuario quita un album', function(){
         var usuario = new Usuario("leonel");
         
         var album = new Album("album1")
         usuario.agregarAlbum(album);
+        usuario.quitarAlbum("album1");
 
-        expect(album.getNombre()).to.equal("album1");
-    });
+        expect().to.equal();
+    });*/
+
+    
+
+   
 });
+
