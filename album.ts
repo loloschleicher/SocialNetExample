@@ -22,9 +22,13 @@ export class Album{
         this.imagenes.push(imagen);   
     }
 
-    /*eliminarImagen(nombreimagen: string){
-        this.imagenes.forEach
-    }*/
+    eliminarImagen(nombreimagen: string){
+        this.imagenes.forEach((key, index) => {
+            if(key.getNombre() == nombreimagen){
+                this.imagenes.splice(index, 1);
+            }
+        })
+    }
 
 
 

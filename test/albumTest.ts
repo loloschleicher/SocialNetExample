@@ -95,7 +95,7 @@ describe('Test de Album', function(){
         usuario.agregarAlbum(album);
         usuario.agregarImagen(imagen, "albumPerfil" );
         usuario.agregarImagen(imagen1, "albumPerfil" );
-        usuario.eliminarImagen("fotoPerfil.jpg", "albumPerfil");
+        usuario.eliminarImagen("fotoPerfil1.jpg", "albumPerfil");
         expect(album.imagenes.length).to.equals(1);
     });
 
