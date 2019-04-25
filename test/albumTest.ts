@@ -20,6 +20,16 @@ describe('Test de Album', function(){
         expect(usuario.albums.length).to.equals(0);
     });
 
+    it('Usuario obtiene un album por el nombre', function(){
+        var usuario = new Usuario("leonel");
+        
+        var album = new Album("album");
+        var album1 = new Album("album1");
+        usuario.agregarAlbum(album);
+        usuario.agregarAlbum(album1);
+        expect(usuario.obtenerAlbum("album")).to.equals(album);
+    });
+
     
 
    

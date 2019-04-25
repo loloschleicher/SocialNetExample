@@ -4,7 +4,7 @@ export class Usuario{
     private nombre: string;
     private apellido: string;  
     private imagen: string;
-    public albums: Array<Album>;
+    albums: Array<Album>;
 
     constructor(nombre: string){
         this.nombre = nombre;
@@ -21,6 +21,16 @@ export class Usuario{
                 this.albums.splice(index, 1);
             }
         });      
+    }
+
+    obtenerAlbum(nombre: string): Album{
+        var albumBuscado: Album;
+        this.albums.forEach((key, index) => {
+            if(key.getNombre() == nombre ){
+                albumBuscado = key;
+            }
+        });
+        return albumBuscado;     
     }
 
     
