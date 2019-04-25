@@ -12,7 +12,15 @@ export class Usuario{
     }
 
     agregarAlbum(album: Album){
-        this.albums.push(album);
+        var bandera = 0;
+        this.albums.forEach((key, index) => {
+            if(key.getNombre() == album.getNombre()){
+                bandera = 1
+            }
+        }); 
+        if(bandera == 0){
+            this.albums.push(album);
+        }         
     }
 
     quitarAlbum(nombre: string){

@@ -29,6 +29,17 @@ describe('Test de Album', function(){
         usuario.agregarAlbum(album1);
         expect(usuario.obtenerAlbum("album")).to.equals(album);
     });
+    it('Usuario no puede agregar un album con nombre ya exisente', function(){
+        var usuario = new Usuario("leonel");
+        
+        var album = new Album("album");
+        var album1 = new Album("album1");
+        var album2 = new Album("album");
+        usuario.agregarAlbum(album);
+        usuario.agregarAlbum(album1);
+        usuario.agregarAlbum(album2);
+        expect(usuario.albums.length).to.equals(2);
+    });
 
     
 
