@@ -60,6 +60,23 @@ describe('Test de Album', function(){
         }
         expect(usuario.albums.length).to.equals(10);
     });
+    it('Usuario quita el album 4 de 10', function(){
+        var usuario = new Usuario("leonel");    
+        for(var i=0; i<10; i++ ){
+            var album = new Album("album" + i);
+            usuario.agregarAlbum(album);
+        }
+
+        var nombre = "";
+        usuario.albums.forEach((key, index) => {
+            if(index == 3){
+                usuario.quitarAlbum(key.getNombre());
+                nombre = key.getNombre();
+            }
+        })
+        expect(nombre).to.equals("album3");
+    });
+
 
     
 
