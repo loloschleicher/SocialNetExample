@@ -52,6 +52,14 @@ describe('Test de Album', function(){
         usuario.quitarAlbum("album3");
         expect(usuario.albums.length).to.equals(3);
     });
+    it('Usuario agrega 10 albums', function(){
+        var usuario = new Usuario("leonel");    
+        for(var i=0; i<10; i++ ){
+            var album = new Album("album" + i);
+            usuario.agregarAlbum(album);
+        }
+        expect(usuario.albums.length).to.equals(10);
+    });
 
     
 
