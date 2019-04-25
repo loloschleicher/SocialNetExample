@@ -1,4 +1,5 @@
 import { Album } from "./album";
+import { Imagen } from "./imagen";
 
 export class Usuario{
     private nombre: string;
@@ -41,13 +42,14 @@ export class Usuario{
         return albumBuscado;     
     }
 
-    agregarImagen(imagen: string, nombreAlbum: string){
+    agregarImagen(imagen: Imagen, nombreAlbum: string){
         this.albums.forEach((key, index) => {
             if(key.getNombre() == nombreAlbum){
                 key.imagenes.push(imagen);
             }
         })
     }
+
 
     
     }

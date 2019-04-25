@@ -1,6 +1,7 @@
 import { expect } from 'chai';
 import { Usuario } from '../usuario';
 import { Album } from '../album';
+import { Imagen } from '../imagen';
 
 describe('Test de Album', function(){
     it('Usuario agrega 1 album', function(){
@@ -79,9 +80,11 @@ describe('Test de Album', function(){
     it('Usuario agrega una imagen en un album', function(){
         var usuario = new Usuario("leonel");    
         var album = new Album("albumPerfil");
+        var imagen = new Imagen("fotoPerfil.jpg");
+        var imagen1 = new Imagen("fotoPerfil1.jpg");
         usuario.agregarAlbum(album);
-        usuario.agregarImagen("fotoPerfil.jpg", "albumPerfil" );
-        usuario.agregarImagen("fotoPerfil.jpg1", "albumPerfil" );
+        usuario.agregarImagen(imagen, "albumPerfil" );
+        usuario.agregarImagen(imagen1, "albumPerfil" );
         expect(album.imagenes.length).to.equals(2);
     });
 

@@ -1,6 +1,8 @@
+import { Imagen } from "./imagen";
+
 export class Album{
     nombre: string;
-    imagenes: Array<string>;
+    imagenes: Array<Imagen>;
 
     constructor(nombre: string){
         this.setNombre(nombre);
