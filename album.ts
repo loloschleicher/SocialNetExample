@@ -3,7 +3,7 @@ import { Imagen } from "./imagen";
 export class Album{
     nombre: string;
     imagenes: Array<Imagen>;
-    caratula: Imagen;
+    caratula: Imagen = null;
 
     constructor(nombre: string){
         this.setNombre(nombre);
@@ -36,6 +36,12 @@ export class Album{
                 this.caratula = key;
             }
         })
+    }
+
+    caratulaPorDefecto(){
+        if(this.caratula == null){
+            this.caratula = this.imagenes[0];
+        }
     }
 
 

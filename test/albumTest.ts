@@ -113,12 +113,22 @@ describe('Test de Album', function(){
         var usuario = new Usuario("leonel");    
         var album = new Album("albumPerfil");
         var imagen = new Imagen("fotoPerfil.jpg");
-       // var imagen1 = new Imagen("fotoPerfil1.jpg");
         usuario.agregarAlbum(album);
         usuario.agregarImagen(imagen, "albumPerfil" );
-       // usuario.agregarImagen(imagen1, "albumPerfil" );
         usuario.asignarFotoPerfil(imagen);
         expect(usuario.fotoPerfil.getNombre()).to.equals("fotoPerfil.jpg");
+    });
+   it('Asignar la primer imagen de un album como caratula', function(){        
+        var album = new Album("albumCualquiera");
+        var imagen = new Imagen("foto1.jpg");
+        var imagen1 = new Imagen("foto2.jpg");
+        var imagen2 = new Imagen("foto3.jpg");
+        album.agregarImagen(imagen);
+        album.agregarImagen(imagen1);
+        album.agregarImagen(imagen2);
+        album.caratulaPorDefecto();
+
+        expect(album.caratula).to.equals(imagen);
     });
 
 
