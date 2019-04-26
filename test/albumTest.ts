@@ -109,6 +109,17 @@ describe('Test de Album', function(){
         usuario.asignarCaratula("fotoPerfil1.jpg", "albumPerfil");
         expect(album.caratula.getNombre()).to.equals("fotoPerfil1.jpg");
     });
+    it('Usuario asigna imagen de perfil del albumPerfil', function(){
+        var usuario = new Usuario("leonel");    
+        var album = new Album("albumPerfil");
+        var imagen = new Imagen("fotoPerfil.jpg");
+       // var imagen1 = new Imagen("fotoPerfil1.jpg");
+        usuario.agregarAlbum(album);
+        usuario.agregarImagen(imagen, "albumPerfil" );
+       // usuario.agregarImagen(imagen1, "albumPerfil" );
+        usuario.asignarFotoPerfil(imagen);
+        expect(usuario.fotoPerfil.getNombre()).to.equals("fotoPerfil.jpg");
+    });
 
 
     

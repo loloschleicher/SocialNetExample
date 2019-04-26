@@ -4,7 +4,7 @@ import { Imagen } from "./imagen";
 export class Usuario{
     private nombre: string;
     private apellido: string;  
-    //imagen: string;
+    fotoPerfil: Imagen;
     albums: Array<Album>;
 
     constructor(nombre: string){
@@ -52,6 +52,16 @@ export class Usuario{
 
     asignarCaratula(nombreImagen: string, nombreAlbum: string){
         this.obtenerAlbum(nombreAlbum).asignarCaratula(nombreImagen);
+    }
+
+    asignarFotoPerfil(imagen: Imagen){
+        if(this.obtenerAlbum("albumPerfil")){
+            this.obtenerAlbum("albumPerfil").imagenes.forEach((key, index) => {
+                if(key.getNombre() == imagen.getNombre()){
+                    this.fotoPerfil = key;
+                }
+            })
+        }
     }
 
 
