@@ -130,6 +130,19 @@ describe('Test de Album', function(){
 
         expect(album.caratula).to.equals(imagen);
     });
+    it('Usuario agrega una imagen en la posicion 7', function(){        
+        var usuario = new Usuario("leonel");
+        var album = new Album("album");
+        usuario.agregarAlbum(album);
+        for(var i=0; i<10; i++ ){
+            var imagen = new Imagen("imagen" + i);
+            usuario.agregarImagen(imagen, "album");
+        }
+        var imagen1 = new Imagen("imagenAgregada");
+        usuario.agregarImagen(imagen1, "album", 7);
+
+        expect(album.imagenes[7].getNombre()).to.equals("imagenAgregada");
+    });
 
 
     

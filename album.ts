@@ -18,8 +18,13 @@ export class Album{
         return this.nombre;
     }
 
-    agregarImagen(imagen: Imagen){      
-        this.imagenes.push(imagen);   
+    agregarImagen(imagen: Imagen, posicion?: number){
+        if(posicion){
+            this.imagenes.splice(posicion, 0, imagen); 
+        }else{
+            this.imagenes.push(imagen);
+        }      
+         
     }
 
     eliminarImagen(nombreimagen: string){

@@ -42,8 +42,8 @@ export class Usuario{
         return albumBuscado;     
     }
 
-    agregarImagen(imagen: Imagen, nombreAlbum: string){
-        this.obtenerAlbum(nombreAlbum).agregarImagen(imagen);
+    agregarImagen(imagen: Imagen, nombreAlbum: string, posicion?: number){
+        this.obtenerAlbum(nombreAlbum).agregarImagen(imagen, posicion);
     }
 
     eliminarImagen(nombreimagen: string, nombreAlbum: string){
@@ -62,6 +62,10 @@ export class Usuario{
                 }
             })
         }
+    }
+
+    agregarImagenPosicion(imagen: Imagen){
+
     }
 
 
