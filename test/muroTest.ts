@@ -10,7 +10,7 @@ describe('Test de Muro', function(){
         var usuario = new Usuario("leonel");
         usuario.publicar("Hola", "Nueva Publicacion", "publico");
          
-        expect(usuario.muro.publicaciones.length).to.equals(1); 
+        expect(MuroGeneral.getInstance().publicaciones.length).to.equals(1); 
     });
     it('Usuario agrega una publicacion', function(){
         var usuario = new Usuario("leonel");
