@@ -1,15 +1,21 @@
 import { Album } from "./album";
 import { Imagen } from "./imagen";
+import { MuroGeneral } from "./muroGeneral";
+import { Publicacion } from "./publicacion";
+import { Muro } from "./muro";
 
 export class Usuario{
     private nombre: string;
     private apellido: string;  
     fotoPerfil: Imagen;
     albums: Array<Album>;
+    muro: Muro;
+    
 
     constructor(nombre: string){
         this.nombre = nombre;
         this.albums = [];
+        this.muro = new Muro();
     }
 
     agregarAlbum(album: Album){
@@ -68,7 +74,8 @@ export class Usuario{
 
     }
 
+    publicar(descripcion: string, contenido: string, tipo: string){
+            this.muro.publicar(descripcion, contenido, tipo);
+        }
 
-
-    
     }
